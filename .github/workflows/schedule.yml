@@ -11,4 +11,5 @@ jobs:
     steps:
       - name: Call Domain Watcher Endpoint
         run: |
-          curl -X GET https://domain-watcher-lovat.vercel.app/api/domain/check
+          curl -X GET https://domain-watcher-lovat.vercel.app/api/domain/check \
+          -H "x-secret-token: ${{ secrets.SECRET_TOKEN }}"
