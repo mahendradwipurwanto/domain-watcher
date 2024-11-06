@@ -1,0 +1,14 @@
+name: Run Domain Watcher
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Runs every hour
+  workflow_dispatch:  # For manual runs
+
+jobs:
+  run-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Domain Watcher Endpoint
+        run: |
+          curl -X GET https://domain-watcher-lovat.vercel.app/api/domain/check
