@@ -2,7 +2,7 @@ name: Run Domain Watcher
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour
+    - cron: '*/2 * * * *' # Runs every 2 minutes
   workflow_dispatch:  # For manual runs
 
 jobs:
